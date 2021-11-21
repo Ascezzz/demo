@@ -18,22 +18,7 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello(){
-        int i = 0;
-        log.info("int:{}",i);
         return "world";
-    }
-
-    @RequestMapping(value = "/insert",method = RequestMethod.POST)
-    public Object insert(@RequestBody InsertReq insertReq){
-        log.info("insertReq:{}",insertReq);
-        try {
-            helloService.insert(insertReq);
-            return "success";
-        }catch (Exception e){
-            log.error("insert.error:",e);
-            return "error";
-        }
-
     }
 
 }
